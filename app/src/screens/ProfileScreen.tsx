@@ -81,108 +81,142 @@ export default function ProfileScreen({
 
   // console.log(firstName);
   return (
-    <ScrollView
-      contentContainerStyle={{ flexGrow: 1, justifyContent: "center" }}
+    <ImageBackground
+      source={require("../assets/images/home4.png")}
+      resizeMode="cover"
+      style={styles.image}
     >
-      <View style={styles.container}>
-        <Text style={styles.account}>Account Information</Text>
+      <ScrollView
+        contentContainerStyle={{ flexGrow: 1, justifyContent: "center" }}
+      >
+        <View style={styles.container}>
+          <Text style={styles.account}>Account Information</Text>
 
-        <TouchableOpacity
-          style={styles.buttonStyle}
-          //onPress={() => null}
-          activeOpacity={0.85}
-        >
-          <Text style={styles.label}>
-            {" "}
-            Name:{" "}
-            <Text style={styles.info}>
-              {userInfo.firstName} {userInfo.lastName}
-            </Text>{" "}
-          </Text>
-        </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.buttonStyle}
+            //onPress={() => null}
+            activeOpacity={0.85}
+          >
+            <Text style={styles.label}>
+              {" "}
+              <Text style={styles.subtitle}> 
+                Name{" "}
+              </Text>
+              <Text style={styles.info}>
+                : {userInfo.firstName} {userInfo.lastName}
+              </Text>{" "}
+            </Text>
+          </TouchableOpacity>
 
-        <TouchableOpacity
-          style={styles.buttonStyle}
-          //onPress={}
-          activeOpacity={0.85}
-        >
-          <Text style={styles.label}>
-            {" "}
-            Email: <Text style={styles.info}>{userInfo.email} </Text>
-          </Text>
-        </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.buttonStyle}
+            //onPress={}
+            activeOpacity={0.85}
+          >
+            <Text style={styles.label}>
+              {" "}
+              <Text style={styles.subtitle}> 
+                Email
+              </Text>
+              <Text style={styles.info}>: {userInfo.email} </Text>
+            </Text>
+          </TouchableOpacity>
 
-        <TouchableOpacity
-          style={styles.buttonStyle}
-          //onPress={() => navigation.navigate("Gender")}
-          activeOpacity={0.85}
-        >
-          <Text style={styles.label}> Gender: {gender}</Text>
-        </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.buttonStyle}
+            //onPress={() => navigation.navigate("Gender")}
+            activeOpacity={0.85}
+          >
+            <Text style={styles.label}> 
+              <Text style={styles.subtitle}> 
+                Gender
+              </Text>
+            : {gender}</Text>
+          </TouchableOpacity>
 
-        <TouchableOpacity
-          style={styles.buttonStyle}
-          //onPress={() => navigation.navigate("Ethnicity")}
-          activeOpacity={0.85}
-        >
-          <Text style={styles.label}> Race/Ethnicity: {race}</Text>
-        </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.buttonStyle}
+            //onPress={() => navigation.navigate("Ethnicity")}
+            activeOpacity={0.85}
+          >
+            <Text style={styles.label}>
+              <Text style={styles.subtitle}> 
+                Race/Ethnicity
+              </Text>
+            : {race}</Text>
+          </TouchableOpacity>
 
-        <TouchableOpacity
-          style={styles.buttonStyle}
-          onPress={() => navigation.navigate("Edit Phone Number")}
-          activeOpacity={0.85}
-        >
-          <Text style={styles.label}>
-            {" "}
-            Phone Number: {phoneNumber}{" "}
-            <Text style={styles.editText}>[Edit]</Text>
-          </Text>
-        </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.buttonStyle}
+            onPress={() => navigation.navigate("Edit Phone Number")}
+            activeOpacity={0.85}
+          >
+            <Text style={styles.label}>
+              {" "}
+              <Text style={styles.subtitle}> 
+                Phone Number
+              </Text>
+              : {phoneNumber}{" "}
+              <Text style={styles.editText}>[Edit]</Text>
+            </Text>
+          </TouchableOpacity>
 
-        <TouchableOpacity
-          style={styles.buttonStyle}
-          onPress={() => navigation.navigate("Edit Address")}
-          activeOpacity={0.85}
-        >
-          <Text style={styles.label}>
-            Address: {address}, {city}, {state} {zip}{" "}
-            <Text style={styles.editText}>[Edit]</Text>
-          </Text>
-        </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.buttonStyle}
+            onPress={() => navigation.navigate("Edit Address")}
+            activeOpacity={0.85}
+          >
+            <Text style={styles.label}>
+              <Text style={styles.subtitle}> 
+                Address
+              </Text>
+              : {address}, {city}, {state} {zip}{" "}
+              <Text style={styles.editText}>[Edit]</Text>
+            </Text>
+          </TouchableOpacity>
 
-        <TouchableOpacity
-          style={styles.buttonStyle}
-          onPress={() => navigation.navigate("Sleep Schedule")}
-          activeOpacity={0.85}
-        >
-          <Text style={styles.label}>
-            {" "}
-            Sleep Schedule <Text style={styles.editText}>[Edit]</Text>
-          </Text>
-        </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.buttonStyle}
+            onPress={() => navigation.navigate("Sleep Schedule")}
+            activeOpacity={0.85}
+          >
+            <Text style={styles.label}>
+              {" "}
+              <Text style={styles.subtitle}> 
+                Sleep Schedule
+              </Text>
+              <Text style={styles.editText}> [Edit]</Text>
+            </Text>
+          </TouchableOpacity>
 
-        <TouchableOpacity
-          style={styles.buttonStyle}
-          onPress={() => {
-            {
-              navigation.navigate("Demographics");
-            }
-          }}
-          activeOpacity={0.85}
-        >
-          <Text style={styles.label}> Additional Demographics</Text>
-        </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.buttonStyle}
+            onPress={() => {
+              {
+                navigation.navigate("Demographics");
+              }
+            }}
+            activeOpacity={0.85}
+          >
+            <Text style={styles.label}>
+              <Text style={styles.subtitle}> 
+                Additional Demographics
+              </Text>
+              <Text style={styles.editText}> [Edit]</Text>
+            </Text>
 
-        <TouchableOpacity
-          style={styles.button}
-          activeOpacity={0.85}
-          onPress={handleSignOut}
-        >
-          <Text style={styles.buttonTextWhite}>Log out</Text>
-        </TouchableOpacity>
-      </View>
-    </ScrollView>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.button}
+            activeOpacity={0.85}
+            onPress={handleSignOut}
+          >
+            <Text style={styles.buttonTextWhite}>Log out</Text>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
+    </ImageBackground>
   );
 }
 
@@ -190,7 +224,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    backgroundColor: "#FFFFFF99",
+    backgroundColor: "#FFFFFF00",
     //justifyContent: "center",
   },
   buttonTextWhite: {
@@ -219,10 +253,11 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     backgroundColor: "#DBECEE",
     paddingHorizontal: 15,
-    borderRadius: 4,
+    borderRadius: 10,
     justifyContent: "center",
     borderColor: "#184E77",
     borderWidth: 1,
+    marginTop: 10,
   },
   buttonComponent: {
     justifyContent: "flex-end",
@@ -234,6 +269,13 @@ const styles = StyleSheet.create({
     marginLeft: -3,
     flexWrap: "wrap",
     fontSize: 15,
+    color: "#072B4F",
+  },
+  subtitle: {
+    margin: 20,
+    fontWeight: "bold",
+    fontSize: 15,
+    color: "#072B4F",
   },
   info: {
     textAlign: "right",
@@ -241,12 +283,16 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   account: {
-    margin: 18,
+    margin: 20,
     fontWeight: "bold",
-    fontSize: 17,
+    fontSize: 20,
   },
   editText: {
     fontSize: 13,
     color: "gray",
+  },
+  image: {
+    flex: 1,
+    justifyContent: "center",
   },
 });
